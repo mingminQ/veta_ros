@@ -1,0 +1,25 @@
+<package format = "2">
+
+    <!-- Informations -->
+    <name> veta_ros </name>
+    <version> 25.1.1 </version>
+    <description> VETA : Vehicle Extended Trajectory Algorithms </description>
+
+    <maintainer email = "mgkilpro@sju.ac.kr"> Minkyu_Kil </maintainer>
+    <license> BSD </license>
+
+    <!-- Build Tool : Catkin -->
+    <buildtool_depend> catkin </buildtool_depend>
+
+    <!-- ROS Language -->
+    <depend> roscpp </depend>
+
+    <!-- Dependencies -->
+    <depend> std_msgs      </depend>
+    <depend> geometry_msgs </depend>
+    <depend> nav_msgs      </depend>
+
+    <depend> tf2           </depend>
+    <depend> tf2_ros       </depend>
+
+</package>

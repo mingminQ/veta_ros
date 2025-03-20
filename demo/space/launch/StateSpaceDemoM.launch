@@ -1,0 +1,7 @@
+<launch>
+
+    <node name = "StateSpaceDemo" pkg = "veta_demo" type = "StateSpaceDemo" output = "screen"
+    launch-prefix="valgrind --leak-check=summary --show-reachable=no" />
+
+
+</launch>

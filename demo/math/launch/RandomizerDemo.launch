@@ -1,0 +1,5 @@
+<launch>
+
+    <node name = "RandomizerDemo" pkg = "veta_demo" type = "RandomizerDemo" output = "screen"/>
+
+</launch>

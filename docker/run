@@ -1,0 +1,47 @@
+#!/bin/bash
+# [DOCKER CONTAINER OPTIONS]
+#
+# - X11 forwarding is essential option for GUI in docker
+# - No GPU environment user must add options except nvidia gpu options
+#
+# ------------------------------------------------------------------------------------------
+#
+# -it                                                      \ # terminal interaction mode
+# --rm                                                     \ # remove container when exit
+# --privileged                                             \ # privileged permission
+# --network=host                                           \ # link with host network
+# --env="DISPLAY=$DISPLAY"                                 \ # X11 forwarding
+# --env="QT_X11_NO_MITSHM=1"                               \ # X11 forwarding
+# --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"              \ # X11 forwarding
+# -e NVIDIA_VISIBLE_DEVICES=all                            \ # nvidia gpu resource
+# -e NVIDIA_DRIVER_CAPABILITIES=all                        \ # nvidia gpu resource
+# --runtime=nvidia                                         \ # nvidia gpu resource
+# --gpus all                                               \ # nvidia gpu resource
+# --volume="LOCAL_FILE_PATH:DOCKER_PATH"                   \ # workspace mounting
+#
+# ------------------------------------------------------------------------------------------
+#
+
+# [CONTAINER NAME PARAMETER]
+# - Optional : do not have to declare container name
+ContainerName=$1
+
+# [X11 FORWARDING PERMISSIONS]
+xhost +local:root
+xhost +local:docker
+
+# [RUN DOCKER CONATINER]
+docker run --name=$ContainerName                             \
+    -it                                                      \
+    --rm                                                     \
+    --privileged                                             \
+    --network=host                                           \
+    --env="DISPLAY=$DISPLAY"                                 \
+    --env="QT_X11_NO_MITSHM=1"                               \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"              \
+    -e NVIDIA_VISIBLE_DEVICES=all                            \
+    -e NVIDIA_DRIVER_CAPABILITIES=all                        \
+    --runtime=nvidia                                         \
+    --gpus all                                               \
+    --volume="/home/$USER/workspace/veta_ws:/home/veta_ws"   \
+    veta-ros:noetic

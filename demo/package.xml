@@ -1,0 +1,20 @@
+<package format = "2">
+
+    <!-- Informations -->
+    <name> veta_demo </name>
+    <version> 25.1.1 </version>
+    <description> VETA : Vehicle Environment Trajectory Algorithms </description>
+
+    <maintainer email = "mgkilpro@sju.ac.kr"> Minkyu_Kil </maintainer>
+    <license> BSD </license>
+
+    <!-- Build Tool : Catkin -->
+    <buildtool_depend> catkin </buildtool_depend>
+
+    <!-- ROS Language -->
+    <depend> roscpp </depend>
+
+    <!-- Dependencies -->
+    <depend> veta_ros </depend>
+
+</package>

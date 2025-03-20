@@ -1,0 +1,5 @@
+<launch>
+
+    <node name = "TransformDemo" pkg = "veta_demo" type = "TransformDemo" output = "screen"/>
+
+</launch>

@@ -1,0 +1,5 @@
+<launch>
+
+    <node name = "ExceptionDemo" pkg = "veta_demo" type = "ExceptionDemo" output = "screen"/>
+
+</launch>
